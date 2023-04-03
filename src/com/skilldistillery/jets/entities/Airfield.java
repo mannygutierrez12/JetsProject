@@ -99,43 +99,66 @@ public class Airfield {
 	}
 
 	public void addJetToFleet() {
-	    Jet jet = null;
+		Jet jet = null;
 
-	    System.out.println("Please choose the type of jet you would like to add");
-	    System.out.println("Type 1 for Cargo, 2 for Fighter, or 3 for Passenger");
-	    
-	    Scanner kb = new Scanner(System.in);
-	    
-	    String input = kb.nextLine();
-	    System.out.println("What's the model");
-	    String model = kb.nextLine();
-	    
-	    System.out.println("What's the speed");
-	    double speed = kb.nextDouble();
-	    
-	    System.out.println("What's the range");
-	    double range = kb.nextDouble();
-	    
-	    System.out.println("What's the price");
-	    double price = kb.nextDouble();
+		System.out.println("Please choose the type of jet you would like to add");
+		System.out.println("Type 1 for Cargo, 2 for Fighter, or 3 for Passenger");
 
-	    if (input.equals("1")) {
-	        jet = new CargoJet(model, speed, range, price);
-	    } else if (input.equals("2")) {
-	        jet = new CombatJet(model, speed, range, price);
-	    } else if (input.equals("3")) {
-	        jet = new PassengerJet(model, speed, range, price);
-	    } else {
-	        System.out.println("Invalid input");
-	    }
+		Scanner kb = new Scanner(System.in);
 
-	    if (jet != null) {
-	        fleet.add(jet);
-	        System.out.println("Jet added to the list");
-	    }
+		String input = kb.nextLine();
+		System.out.println("What's the model");
+		String model = kb.nextLine();
+
+		System.out.println("What's the speed");
+		double speed = kb.nextDouble();
+
+		System.out.println("What's the range");
+		double range = kb.nextDouble();
+
+		System.out.println("What's the price");
+		double price = kb.nextDouble();
+
+		if (input.equals("1")) {
+			jet = new CargoJet(model, speed, range, price);
+		} else if (input.equals("2")) {
+			jet = new CombatJet(model, speed, range, price);
+		} else if (input.equals("3")) {
+			jet = new PassengerJet(model, speed, range, price);
+		} else {
+			System.out.println("Invalid input");
+		}
+
+		if (jet != null) {
+			fleet.add(jet);
+			System.out.println("Jet added to the list");
+		}
 	}
 
+	public void removeJetFromFleet() {
+		if (fleet.isEmpty()) {
+			System.out.println("No airplanes in the airfield");
+			return;
+		}
 
+		System.out.println("Select a jet to remove from the following list:");
+
+		for (int i = 0; i < fleet.size(); i++) {
+			System.out.println((i + 1) + ") " + fleet.get(i).getModel());
+		}
+
+		Scanner input = new Scanner(System.in);
+		int select = input.nextInt();
+
+		if (select < 1 || select > fleet.size()) {
+			System.out.println("This is not a valid input");
+			return;
+		}
+
+		fleet.remove(select - 1);
+
+		System.out.println("Jet removed from the airfield");
+	}
 
 	public List<Jet> readFromFile() {
 		List<Jet> jets = new ArrayList<>();

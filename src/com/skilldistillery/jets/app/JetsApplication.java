@@ -1,10 +1,8 @@
 package com.skilldistillery.jets.app;
 
-import java.util.List;
 import java.util.Scanner;
 
 import com.skilldistillery.jets.entities.Airfield;
-import com.skilldistillery.jets.entities.Jet;
 
 public class JetsApplication {
 
@@ -17,7 +15,7 @@ public class JetsApplication {
 	}
 
 	private void launch() {
-		// airfield.populateAirfieldFromFile("jets.txt");
+
 
 		boolean amIDone = true;
 		while (amIDone) {
@@ -36,10 +34,10 @@ public class JetsApplication {
 				loadAllCargoJets();
 			} else if (choice.equals("6")) {
 				dogfight();
-	         } else if (choice.equals("7")) {
-	             addJetToFleet();
-//	         } else if (choice.equals("8")) {
-//	             removeJetFromFleet();
+			} else if (choice.equals("7")) {
+				addJetToFleet();
+			} else if (choice.equals("8")) {
+				removeJetFromFleet();
 			} else if (choice.equals("9")) {
 				amIDone = false;
 				System.out.println("See you later");
@@ -93,8 +91,10 @@ public class JetsApplication {
 
 	private void addJetToFleet() {
 		airfield.addJetToFleet();
-	   
-		
-		}
+
 	}
 
+	private void removeJetFromFleet() {
+		airfield.removeJetFromFleet();
+	}
+}
