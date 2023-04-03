@@ -7,9 +7,8 @@ public abstract class Jet {
 	private double range;
 	private double price;
 
-	public Jet(String type, String model, double speed, double range, double price) {
+	public Jet(String model, double speed, double range, double price) {
 		super();
-		Type = type;
 		this.model = model;
 		this.speed = speed;
 		this.range = range;

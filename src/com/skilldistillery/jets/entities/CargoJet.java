@@ -2,10 +2,12 @@ package com.skilldistillery.jets.entities;
 
 public class CargoJet extends Jet implements CargoJetImplementation {
 
-	public CargoJet(String type, String model, double speed, double range, double price) {
-		super(type, model, speed, range, price);
+	public CargoJet(String model, double speed, double range, double price) {
+		super(model, speed, range, price);
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 	@Override
 	public void loadCargo() {

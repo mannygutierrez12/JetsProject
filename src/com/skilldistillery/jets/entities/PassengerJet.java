@@ -2,8 +2,8 @@ package com.skilldistillery.jets.entities;
 
 public class PassengerJet extends Jet implements PassengerJetImplementation {
 
-	public PassengerJet(String type, String model, double speed, double range, double price) {
-		super(type, model, speed, range, price);
+	public PassengerJet(String model, double speed, double range, double price) {
+		super(model, speed, range, price);
 		// TODO Auto-generated constructor stub
 	}
 

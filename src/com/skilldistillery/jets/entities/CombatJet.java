@@ -6,8 +6,8 @@ public class CombatJet extends Jet implements CombatJetImplementation {
 	
 	
 
-	public CombatJet(String type, String model, double speed, double range, double price) {
-		super(type, model, speed, range, price);
+	public CombatJet(String model, double speed, double range, double price) {
+		super(model, speed, range, price);
 		// TODO Auto-generated constructor stub
 	}
 
