@@ -6,15 +6,24 @@ public abstract class Jet {
 	private double speed;
 	private double range;
 	private double price;
-	
+
+	public Jet(String type, String model, double speed, double range, double price) {
+		super();
+		Type = type;
+		this.model = model;
+		this.speed = speed;
+		this.range = range;
+		this.price = price;
+	}
+
 	public abstract void fly();
-	
+
 	public abstract void takeOff();
-	
+
 	public abstract void land();
-	
+
 	public abstract void communicateWithControlTower();
-	
+
 	public abstract void fuelingTank();
 
 	public String getType() {
@@ -56,6 +65,5 @@ public abstract class Jet {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	
+
 }
