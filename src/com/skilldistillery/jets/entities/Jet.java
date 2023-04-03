@@ -1,5 +1,5 @@
 package com.skilldistillery.jets.entities;
 
-public class Jet {
-
+public abstract class Jet {
+	private String model;
 }

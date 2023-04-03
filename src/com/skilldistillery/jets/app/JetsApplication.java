@@ -7,4 +7,6 @@ public class JetsApplication {
 
 	}
 
+} public void launch() {
+	
 }
