@@ -7,7 +7,7 @@ import com.skilldistillery.jets.entities.Airfield;
 import com.skilldistillery.jets.entities.Jet;
 
 public class JetsApplication {
-	
+
 	private Airfield airfield = new Airfield();
 	private Scanner input = new Scanner(System.in);
 
@@ -16,12 +16,9 @@ public class JetsApplication {
 		app.launch();
 	}
 
-	
-
 	private void launch() {
 		// airfield.populateAirfieldFromFile("jets.txt");
-		
-		
+
 		boolean amIDone = true;
 		while (amIDone) {
 			mainMenu();
@@ -33,20 +30,20 @@ public class JetsApplication {
 				flyAllJets();
 			} else if (choice.equals("3")) {
 				viewFastestJet();
-//	         } else if (choice.equals("4")) {
-//	             viewJetWithLongestRange();
-//	         } else if (choice.equals("5")) {
-//	             loadAllCargoJets();
-//	         } else if (choice.equals("6")) {
-//	             dogfight();
-//	         } else if (choice.equals("7")) {
-//	             addJetToFleet();
+			} else if (choice.equals("4")) {
+				longestRange();
+			} else if (choice.equals("5")) {
+				loadAllCargoJets();
+			} else if (choice.equals("6")) {
+				dogfight();
+	         } else if (choice.equals("7")) {
+	             addJetToFleet();
 //	         } else if (choice.equals("8")) {
 //	             removeJetFromFleet();
-	         } else if (choice.equals("9")) {
-	        	 amIDone = false;
-	        	 System.out.println("See you later");
-	        	 break;
+			} else if (choice.equals("9")) {
+				amIDone = false;
+				System.out.println("See you later");
+				break;
 			} else {
 				System.out.println("Invalid input. Please try again.");
 			}
@@ -67,28 +64,37 @@ public class JetsApplication {
 		System.out.println("9. Quit");
 		System.out.print("PLEASE ENTER A NUMBER FROM THE MENU ABOVE: ");
 		System.out.println();
-		
+
 	}
 
 	public void listFleet() {
 		airfield.printFleetDetails();
 	}
-	
 
 	public void flyAllJets() {
-	    airfield.flyAllJets();
+		airfield.flyAllJets();
 	}
 
 	private void viewFastestJet() {
-		List<Jet> jets = airfield.getFleet();
-		Jet fastestJet = jets.get(0);
-		for (int i = 1; i < jets.size(); i++) {
-			Jet jet = jets.get(i);
-			if (jet.getSpeed() > fastestJet.getSpeed()) {
-				fastestJet = jet;
-			}
-		}
-		System.out.println("Fastest jet: " + fastestJet.toString());
+		airfield.viewFastestJet();
 	}
 
-}
+	private void longestRange() {
+		airfield.longestRange();
+	}
+
+	private void loadAllCargoJets() {
+		airfield.loadAllCargoJets();
+	}
+
+	private void dogfight() {
+		airfield.dogfight();
+	}
+
+	private void addJetToFleet() {
+		airfield.addJetToFleet();
+	   
+		
+		}
+	}
+
