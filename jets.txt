@@ -1,5 +1,5 @@
-Cargo,Boeing 747 Dreamlifter,546,4847,250_000_000
-Cargo,Boeing C-17 GlobeMaster,590,2784,340_000_000
-Fighter,Lockheed Martin F-35 Lightning,1200,1300,80_000_000
-Fighter,Lockheed Martin F-22 Raptor,1500,1864,216_000_000
-Passenger,Boeing 747-8,614,9320.6,418_800_800
+Cargo,Boeing 747 Dreamlifter,546,4847,250000000
+Cargo,Boeing C-17 GlobeMaster,590,2784,340000000
+Fighter,Lockheed Martin F-35 Lightning,1200,1300,80000000
+Fighter,Lockheed Martin F22 Raptor,1500,1864,216000000
+Passenger,Boeing 747,614,9320,418800800
